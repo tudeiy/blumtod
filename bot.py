@@ -312,8 +312,14 @@ class BlumTod:
 
 
 if __name__ == "__main__":
-    try:
-        app = BlumTod()
-        app.main()
-    except KeyboardInterrupt:
-        sys.exit()
+    while True:
+        try:
+            app = BlumTod()
+            app.main()
+        except KeyboardInterrupt:
+            print("\nExiting...")
+            sys.exit()
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            print("Restarting the script...")
+            time.sleep(5)  # Beri waktu jeda sebelum memulai ulang
